@@ -44,4 +44,28 @@ public class LivroController {
     public void deleteLivro(@PathVariable Long id) {
         livroService.deleteLivro(id);
     }
+    
+    // Query method buscar titulo controller
+    @GetMapping("/titulo/{titulo}")
+    public List<Livro> buscarPorTitulo(@PathVariable String titulo) {
+    	return livroService.buscarPorTitulo(titulo);
+    }
+    
+    @GetMapping("/autor/{autor}")
+    public List<Livro> buscaPorAutor(@PathVariable String autor) {
+    	return livroService.buscaPorAutor(autor);
+    }
+    
+    @GetMapping("/nome/{nome}")
+    public List<Livro> buscaPorNome(@PathVariable String nome) {
+    	return livroService.buscarPorNome(nome);
+    }
+    @GetMapping("/editora/{editora}")
+    public List<Livro> buscaPorEditora(@PathVariable String editora) {
+    	return livroService.buscaPorEditora(editora);
+    }
+    @GetMapping("/isbn/{isbn}")
+    public List<Livro> buscaPorISBN(@PathVariable String isbn) {
+    	return livroService.buscaPorISBN(isbn);
+    }
 }
